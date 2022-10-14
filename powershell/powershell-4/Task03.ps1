@@ -3,7 +3,7 @@ param(
 )
 #luodaan halutulle tiedostolle polku ja tyhjä lista
 $file = Join-Path $HOME $filename
-[array]$names = ""
+$names = @()
 #loop pyörii niin pitkään, kunnes tulee pelkkä enter
 do {
   #kysytään workstationin nimi
@@ -15,4 +15,5 @@ until ($name -eq "")
 #kirjoitetaan lista tiedostoon
   $names | Add-Content $file
 #kuitataan, että homma roger
-Write-Host "$file created succesfully"
+  Write-Host "$file created succesfully"
+ 
