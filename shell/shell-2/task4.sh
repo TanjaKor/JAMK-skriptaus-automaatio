@@ -14,6 +14,6 @@ then
   echo "Ei luoda käyttäjää ${username}, koska se on jo olemassa"
 #jos ei ole, luodaan tunnus kotihakemistoineen ja oletustulkiksi bash
 else
-  sudo useradd -m -s /bin/bash "${username}"
-  echo "${username} on luotu"
+  sudo useradd -p "" -m -s /bin/bash "${username}"
+    echo "${username} on luotu"
 fi
