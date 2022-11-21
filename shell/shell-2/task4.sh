@@ -7,8 +7,8 @@
 #miten huomioit sudo oikeudet??
 #kysytään käyttäjänimi
 read -p "Minkä käyttäjänimen haluat luoda? " username
-#tarkistetaan onko olemassa
-if id -u "${username}" 
+#tarkistetaan onko olemassa (ja ohjataan ulostulo pois promptista)
+if id -u "${username}" > /dev/null 2>&1
 #jos on,kerrotaan, ettei luoda, koska on jo olemassa
 then
   echo "Ei luoda käyttäjää ${username}, koska se on jo olemassa"
