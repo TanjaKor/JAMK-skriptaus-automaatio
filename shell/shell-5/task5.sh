@@ -33,7 +33,7 @@ do
         ;;
       identiteetti)
       #tulostellaan identiteetti
-        echo "${sankarit}" | jq ".members[$nro].name, .members[$nro].secretIdentity"
+        echo "${sankarit}" | jq ".members[$nro].secretIdentity"
         echo
        ;;
     esac
