@@ -6,31 +6,35 @@
 
 #muutetaan deliminator pilkuksi koko skriptin ajaksi
 IFS=","
+
 #luodaan funktio lisäämiselle
 auto() {
-  #kysytään valmistaja
-  read -p "Mikä on auton valmistaja? " v
-  #kysytään malli
-  read -p "Mikä on auton malli? " m
-  #kysytään vuosi
-  read -p "Mikä on auton vuosimalli? " vm
-  #kysytään väri
-  read -p "Mikä on auton vari? " vari
-  #luodan stringi-muuttuja, johon lisätään halutut tiedot
-  stringi=""
-  #muutetaan annetut arvot yhdeksi stringiksi loopin avulla
-  for ominaisuus in ${v} ${m} ${vm} ${vari}
-  do
-    stringi+="${ominaisuus},"
-  done
   #lisätään stringi tiedostoon
-  echo "${stringi}" >> "$1"
+  echo "$1" >> "$2"
 }
 
 #alustetaan rivinumeroille muuttuja
 i=1
+#kysytään valmistaja
+  read -p "Mikä on auton valmistaja? " v
+  #lisätään stringiin
+  stringi="${v},"
+  #kysytään malli
+  read -p "Mikä on auton malli? " m
+  #lisätään
+  stringi+="${m},"
+  #kysytään vuosi
+  read -p "Mikä on auton vuosimalli? " vm
+  #lisätään
+  stringi+="${vm},"
+  #kysytään väri
+  read -p "Mikä on auton väri? " vari
+  #lisätään
+  stringi+="${vari}"
+
 #kutsutaan funktiota, jotta näkyy tulosteessa
-auto "$@"
+auto "${stringi}" "$1"
+
 #Looppi, jotta voidaan lukea rivi riviltä (ja item itemiltä)
 while read -r valmistaja malli vuosi vari
 do
