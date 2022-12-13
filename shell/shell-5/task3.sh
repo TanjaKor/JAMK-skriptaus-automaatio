@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 #HUOM!!! Ymmärsin ohjeistuksen niin, että YKSI auto lisätään (adds A new entry)
-#jos pitäisi lisätä useampi, niin funktion toiminnat olisivat loopin sisällä, kunnes ilmoitetaan ettei enää haluta lisätä
+#jos pitäisi lisätä useampi, niin auton lisäyksen toiminnat olisivat loopin sisällä, kunnes ilmoitetaan ettei enää haluta lisätä
 #kuten task1ssä oli
 
 #muutetaan deliminator pilkuksi koko skriptin ajaksi
